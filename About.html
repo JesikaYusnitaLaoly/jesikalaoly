@@ -1,47 +1,173 @@
-<html>
-    <head></head><title>About Me</title>
-    </head>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Jesika Yusnita Laoly</title>
+    <style>
+        /* HEADER */
+        header {
+            background-color: #00BFFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header nav ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        header nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* CARD STYLE */
+        .profile-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00BFFF;
+        }
+
+        .profile-card h2 {
+            color: #00BFFF;
+            margin: 10px 0;
+        }
+
+        /* TABLE STYLE */
+        .bio-table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .bio-table, .bio-table th, .bio-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .bio-table th {
+            background-color: #00BFFF;
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #00BFFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+    </style>
+</head>
 <body>
-    <h1>About Me</h1>
-<p>Biodata</p>
 
-<table border="1" cellpadding="10" cellspacing="0">
-    
-    <tr>
-        <td>Nama</td>
-        <td>Jesika Yusnita Laoly</td>
-    </tr>
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+    <h1>Perpustakaan Jesika Yusnita Laoly</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <tr>
-        <td>NIM</td>
-        <td>220709064</td>
-    </tr>
+<!-- ABOUT ME SECTION -->
+<div class="container">
+    <div class="profile-card">
+        <img src="https://lh3.googleusercontent.com/d/1EeQkvDIAx2DbhOTeuGk842MkT-wUy4k5" alt="Foto Profil"> 
+        <h2>Jesika Yusnita Laoly</h2>
+        <p>Mahasiswa Jurusan Perpustakaan dan Sains Informasi, Universitas Sumatera Utara</p>
+    </div>
 
-    <tr>
-        <td>Jurusan</td>
-        <td>Perpustakaan dan Sains Informasi</td>
-    </tr>
+    <h3>Biodata</h3>
+    <table class="bio-table">
+        <tr>
+            <th>Informasi</th>
+            <th>Detail</th>
+        </tr>
+        <tr>
+            <td>Nama</td>
+            <td>Jesika Yusnita Laoly</td>
+        </tr>
+        <tr>
+            <td>NIM</td>
+            <td>220709064</td>
+        </tr>
+        <tr>
+            <td>Jurusan</td>
+            <td>Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+            <td>Fakultas</td>
+            <td>Ilmu Budaya</td>
+        </tr>
+        <tr>
+            <td>Perguruan Tinggi</td>
+            <td>Universitas Sumatera Utara</td>
+        </tr>
+        <tr>
+            <td>E-mail</td>
+            <td>jesikalaolay19@gmail.com</td>
+        </tr>
+    </table>
+</div>
 
-    <tr>
-        <td>Fakultas</td>
-        <td>Ilmu Budaya</td>
-    </tr>
-
-    <tr>
-        <td>Perguruan Tinggi</td>
-        <td>Universitas Sumatera Utara</td>
-    </tr>
-
-    <tr>
-        <td>E-mail</td>
-        <td>jesikalaolay19@gmail.com</td>
-    </tr>
-</table>
+<footer>
+    <p>&copy; 2025 All rights reserved</p>
+</footer>
 
 </body>
 </html>
-<p>Halaman Lainnya</p>
-<ul>
-    <li><a href="index.html">Homepage</a></li>
-    <li><a href="contactus.html">Contact Us</a></li>
-</ul>
