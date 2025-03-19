@@ -5,12 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Perpustakaan Jesika</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
         /* HEADER */
         header {
-            background-color: #00BFFF;
+            background: linear-gradient(135deg, #00BFFF, #0066FF);
             color: white;
             padding: 20px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
             animation: slideDown 1s ease-out;
         }
 
@@ -23,42 +43,50 @@
             height: 50px;
         }
 
-        header nav ul {
-            padding: 0;
+        nav ul {
             list-style: none;
+            padding: 0;
+            margin-top: 10px;
         }
 
-        header nav ul li {
+        nav ul li {
             display: inline;
-            margin: 0 10px;
+            margin: 0 15px;
         }
 
-        header nav ul li a {
+        nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease-in-out;
+            font-size: 18px;
+            transition: 0.3s;
         }
 
-        header nav ul li a:hover {
+        nav ul li a:hover {
             color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
 
         /* CONTAINER */
         .container {
             max-width: 700px;
-            margin: 40px auto;
+            margin: 100px auto 40px;
             padding: 20px;
             text-align: center;
         }
 
-        /* FORM CARD */
+        /* CONTACT FORM */
         .contact-card {
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             animation: fadeIn 1s ease-in;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-card:hover {
+            transform: scale(1.05);
         }
 
         @keyframes fadeIn {
@@ -73,11 +101,12 @@
 
         input, textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
             transition: 0.3s;
+            font-size: 16px;
         }
 
         input:focus, textarea:focus {
@@ -89,10 +118,11 @@
         button {
             background-color: #00BFFF;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
             transition: background-color 0.3s ease-in-out, transform 0.2s;
         }
 
@@ -103,11 +133,12 @@
 
         /* FOOTER */
         footer {
-            background-color: #00BFFF;
+            background: linear-gradient(135deg, #00BFFF, #0066FF);
             color: white;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 40px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
             animation: fadeIn 2s ease-in;
         }
     </style>
@@ -126,13 +157,12 @@
     </nav>
 </header>
 
-<!-- CONTACT US SECTION -->
 <div class="container">
     <div class="contact-card">
         <h2>Hubungi Kami</h2>
         <p>Jika kamu memiliki pertanyaan, masukan, atau ingin tahu lebih lanjut, silakan isi formulir di bawah ini.</p>
 
-        <form action="contact.php" method="GET">
+        <form action="contact.php" method="POST">
             <label>Nama:</label>
             <input type="text" name="nama-lengkap" required />
 
