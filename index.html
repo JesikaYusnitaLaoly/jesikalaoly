@@ -44,44 +44,33 @@
             color: #FFD700;
         }
 
-        /* ANIMASI FADE-IN */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-
-        .visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* SECTION "TENTANG SAYA" */
-        .about {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* SEARCH BAR */
+        .search-container {
             text-align: center;
+            margin: 20px;
         }
 
-        .about h2 {
-            color: #00BFFF;
+        .search-container input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
-        .about p {
-            font-size: 16px;
-            line-height: 1.6;
+        .search-container button {
+            padding: 10px;
+            background-color: #00BFFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
 
-        /* REKOMENDASI BUKU */
-        .rekomendasi {
-            text-align: center;
-            padding: 20px;
+        .search-container button:hover {
+            background-color: #008CBA;
         }
 
+        /* BUKU CONTAINER */
         .buku-container {
             display: flex;
             flex-wrap: wrap;
@@ -131,21 +120,6 @@
         .buku a:hover {
             background: #005f9e;
         }
-
-        /* FOOTER */
-        footer {
-            background-color: #00BFFF;
-            color: white;
-            padding: 20px 10px;
-            text-align: center;
-            animation: fadeIn 2s ease-in;
-            margin-top: 20px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
     </style>
 </head>
 <body>
@@ -162,72 +136,49 @@
     </nav>
 </header>
 
-<!-- TENTANG SAYA -->
-<div class="about fade-in">
-    <h2>Tentang Saya</h2>
-    <p>Selamat datang di perpustakaan digital saya! Website ini adalah tempat saya mengarsipkan berbagai koleksi tulisan, artikel, dan referensi yang bermanfaat bagi siapa saja yang mencintai ilmu dan wawasan baru.</p>
+<!-- SEARCH BAR -->
+<div class="search-container">
+    <input type="text" id="searchBar" placeholder="Cari buku..." onkeyup="searchBooks()">
+    <button onclick="searchBooks()">Cari</button>
 </div>
 
 <!-- REKOMENDASI BUKU -->
-<div class="rekomendasi fade-in">
-    <h3>Rekomendasi Buku</h3>
-    
-    <div class="buku-container">
-        <div class="buku">
-            <img src="https://i.imgur.com/x3IigYG.jpg" alt="Buku 1">
-            <p>Know Can Do!: Put Your Know-How Into Action</p>
-            <a href="https://drive.google.com/file/d/1D16EtsVGXx-BYGFWCgQeESk1_AsX09zb/view?usp=drivesdk" target="_blank">Download File</a>
-        </div>
-        <div class="buku">
-            <img src="https://i.imgur.com/wRDhdzT.jpg" alt="Buku 2">
-            <p>That Will Never Work</p>
-            <a href="https://drive.google.com/file/d/1DacSCJrGrmvP7aV2sDp6Pa9OcCg1FCgI/view?usp=drivesdk" target="_blank">Download File</a>
-        </div>
-        <div class="buku">
-            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386051/Screenshot_20250319_175543_Drive_tzjdda.jpg" alt="Buku 3">
-            <p>Win Keep Grow</p>
-            <a href="https://drive.google.com/file/d/1Cpro2nn5B5EAXl4nLXLR0EmNseQapDa-/view?usp=drivesdk" target="_blank">Download File</a>
-        </div>
-        <div class="buku">
-    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742385759/f06728e1142316050b905c4ff9f6d1b3_zxmm6d.jpg" alt="Buku 4">
-    <p>The 7 Habits of Highly Effective People</p>
-    <a href="https://drive.google.com/file/d/1DLbGvHQ8Ct_qASE8yXmnI2rexZwxHOo7/view?usp=drivesdk" target="_blank">Download File</a>
+<div class="buku-container" id="bukuContainer">
+    <div class="buku" data-title="Know Can Do">
+        <img src="https://i.imgur.com/x3IigYG.jpg" alt="Buku 1">
+        <p>Know Can Do!</p>
+        <a href="#">Download</a>
+    </div>
+    <div class="buku" data-title="That Will Never Work">
+        <img src="https://i.imgur.com/wRDhdzT.jpg" alt="Buku 2">
+        <p>That Will Never Work</p>
+        <a href="#">Download</a>
+    </div>
+    <div class="buku" data-title="Win Keep Grow">
+        <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386051/Screenshot_20250319_175543_Drive_tzjdda.jpg" alt="Buku 3">
+        <p>Win Keep Grow</p>
+        <a href="#">Download</a>
+    </div>
 </div>
-<div class="buku">
-    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742385826/83bec07a6da897d33a5e874aee41aa74_lkp4tq.jpg" alt="Buku 5">
-    <p>Sales Management Simplified</p>
-    <a href="https://drive.google.com/file/d/1DLbGvHQ8Ct_qASE8yXmnI2rexZwxHOo7/view?usp=drivesdk" target="_blank">Download File</a>
-</div>
-<div class="buku">
-    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386298/Screenshot_20250319_142334_Gallery_1_gcrn9l.jpg" alt="Buku 6">
-    <p>The Art of Strategy: A Game Theorist's Guide to Success in Business & Life</p>
-    <a href="https://drive.google.com/file/d/1DIn4v2DVqDTlI4bV-3NfUH-P7FMWqvt5/view?usp=drivesdk" target="_blank">Download File</a>
-</div>
-<div class="buku">
-    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386478/Screenshot_20250319_142352_Gallery_1_suwlfb.jpg" alt="Buku 7">
-    <p>Master Mentors: 30 Transformative Insights from Our Greatest Minds</p>
-    <a href="https://drive.google.com/file/d/1CudR0cpOFyEZT6oVyc0f7oYCv435kzzq/view?usp=drivesdk" target="_blank">Download File</a>
-</div>
-<div class="buku">
-    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386915/Screenshot_20250319_192026_Drive_cq8kl2.jpg" alt="Buku 8">
-    <p>Get it Done: Surprising Lessons from the Science of Motivation</p>
-    <a href="https://drive.google.com/file/d/1FHRw0bYtWv5m9MWm30HND1G7DAwZYsMY/view?usp=drivesdk" target="_blank">Download File</a>
-</div>
-</div>
-    
+
 <footer>
     <p>&copy; 2025 All rights reserved</p>
 </footer>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let elements = document.querySelectorAll(".fade-in");
-        elements.forEach((element, index) => {
-            setTimeout(() => {
-                element.classList.add("visible");
-            }, index * 300);
+    function searchBooks() {
+        let input = document.getElementById("searchBar").value.toLowerCase();
+        let books = document.querySelectorAll(".buku");
+        
+        books.forEach(book => {
+            let title = book.getAttribute("data-title").toLowerCase();
+            if (title.includes(input)) {
+                book.style.display = "block";
+            } else {
+                book.style.display = "none";
+            }
         });
-    });
+    }
 </script>
 
 </body>
