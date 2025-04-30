@@ -240,35 +240,68 @@
         </div>
     </div>
 </div>
-    <!-- TABEL PERKALIAN 10 x 10 -->
-<div class="about fade-in">
-    <h2>Tabel Perkalian 10 x 10</h2>
-    <table border="1" cellpadding="10" style="margin: auto; border-collapse: collapse;">
-        <thead>
-            <tr>
-                <th>*</th>
-                <!-- Header Kolom -->
+   <!-- TABEL PERKALIAN 10 x 10 -->
+<div class="about fade-in" style="margin-top: 50px;">
+    <h2 style="text-align: center; font-size: 28px; margin-bottom: 20px;">Tabel Perkalian 10 x 10</h2>
+    <div style="overflow-x: auto;">
+        <table class="tabel-perkalian">
+            <thead>
+                <tr>
+                    <th>*</th>
+                    <script>
+                        for (let i = 1; i <= 10; i++) {
+                            document.write(`<th>${i}</th>`);
+                        }
+                    </script>
+                </tr>
+            </thead>
+            <tbody>
                 <script>
                     for (let i = 1; i <= 10; i++) {
+                        document.write('<tr>');
                         document.write(`<th>${i}</th>`);
+                        for (let j = 1; j <= 10; j++) {
+                            document.write(`<td>${i * j}</td>`);
+                        }
+                        document.write('</tr>');
                     }
                 </script>
-            </tr>
-        </thead>
-        <tbody>
-            <script>
-                for (let i = 1; i <= 10; i++) {
-                    document.write('<tr>');
-                    document.write(`<th>${i}</th>`);
-                    for (let j = 1; j <= 10; j++) {
-                        document.write(`<td>${i * j}</td>`);
-                    }
-                    document.write('</tr>');
-                }
-            </script>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+<!-- CSS untuk tampilan tabel -->
+<style>
+    .tabel-perkalian {
+        border-collapse: collapse;
+        margin: auto;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabel-perkalian th,
+    .tabel-perkalian td {
+        border: 1px solid #ccc;
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    .tabel-perkalian th {
+        background-color: #007acc;
+        color: white;
+    }
+
+    .tabel-perkalian tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .tabel-perkalian tbody tr:hover {
+        background-color: #e0f7fa;
+        transition: background-color 0.3s ease;
+    }
+</style>
 
 <footer>
     <p>&copy; 2025 All rights reserved</p>
