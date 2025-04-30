@@ -302,7 +302,31 @@
         transition: background-color 0.3s ease;
     }
 </style>
+<!-- VIDEO DENGAN ANIMASI -->
+<div class="video-container fade-in-zoom" style="margin-top: 60px; text-align: center;">
+    <h2 style="font-size: 28px; margin-bottom: 20px;">Tonton Video Pembelajaran</h2>
+    <video controls width="640" height="360" style="border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+        <source src="video/perkalian.mp4" type="video/mp4">
+        Browser Anda tidak mendukung pemutaran video.
+    </video>
+</div>
 
+<!-- CSS untuk animasi -->
+<style>
+    .fade-in-zoom {
+        opacity: 0;
+        transform: scale(0.9);
+        animation: fadeZoomIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeZoomIn {
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
+    
 <footer>
     <p>&copy; 2025 All rights reserved</p>
 </footer>
