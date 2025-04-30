@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perpustakaan Jesika Yusnita Laoly</title>
     <style>
-        /* GENERAL STYLES */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f0f4f8;
-        }
-
         /* HEADER */
         header {
             background-color: #00BFFF;
@@ -52,26 +44,24 @@
             color: #FFD700;
         }
 
-        /* FADE-IN ANIMATION */
+        /* ANIMASI FADE-IN */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeInUp 1s ease-out forwards;
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* ABOUT SECTION */
+        /* SECTION "TENTANG SAYA" */
         .about {
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background: #fff;
+            background: #f9f9f9;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -86,7 +76,7 @@
             line-height: 1.6;
         }
 
-        /* REKOMENDASI & EVENT */
+        /* REKOMENDASI BUKU */
         .rekomendasi {
             text-align: center;
             padding: 20px;
@@ -142,36 +132,6 @@
             background: #005f9e;
         }
 
-        /* TABEL PERKALIAN */
-        .tabel-perkalian {
-            border-collapse: collapse;
-            margin: auto;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .tabel-perkalian th,
-        .tabel-perkalian td {
-            border: 1px solid #ccc;
-            padding: 10px 15px;
-            text-align: center;
-        }
-
-        .tabel-perkalian th {
-            background-color: #007acc;
-            color: white;
-        }
-
-        .tabel-perkalian tbody tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .tabel-perkalian tbody tr:hover {
-            background-color: #e0f7fa;
-            transition: background-color 0.3s ease;
-        }
-
         /* FOOTER */
         footer {
             background-color: #00BFFF;
@@ -202,7 +162,7 @@
     </nav>
 </header>
 
-<!-- ABOUT -->
+<!-- TENTANG SAYA -->
 <div class="about fade-in">
     <h2>Tentang Saya</h2>
     <p>Selamat datang di perpustakaan digital saya! Website ini adalah tempat saya mengarsipkan berbagai koleksi tulisan, artikel, dan referensi yang bermanfaat bagi siapa saja yang mencintai ilmu dan wawasan baru.</p>
@@ -211,33 +171,76 @@
 <!-- REKOMENDASI BUKU -->
 <div class="rekomendasi fade-in">
     <h3>Rekomendasi Buku</h3>
+    
     <div class="buku-container">
-        <!-- Masukkan item buku seperti sebelumnya -->
-        <!-- Contoh satu item buku -->
         <div class="buku">
             <img src="https://i.imgur.com/x3IigYG.jpg" alt="Buku 1">
             <p>Know Can Do!: Put Your Know-How Into Action</p>
             <a href="https://drive.google.com/file/d/1D16EtsVGXx-BYGFWCgQeESk1_AsX09zb/view?usp=drivesdk" target="_blank">Download File</a>
         </div>
-        <!-- Tambahkan buku lain di sini -->
-    </div>
+        <div class="buku">
+            <img src="https://i.imgur.com/wRDhdzT.jpg" alt="Buku 2">
+            <p>That Will Never Work</p>
+            <a href="https://drive.google.com/file/d/1DacSCJrGrmvP7aV2sDp6Pa9OcCg1FCgI/view?usp=drivesdk" target="_blank">Download File</a>
+        </div>
+        <div class="buku">
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386051/Screenshot_20250319_175543_Drive_tzjdda.jpg" alt="Buku 3">
+            <p>Win Keep Grow</p>
+            <a href="https://drive.google.com/file/d/1Cpro2nn5B5EAXl4nLXLR0EmNseQapDa-/view?usp=drivesdk" target="_blank">Download File</a>
+        </div>
+        <div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742385759/f06728e1142316050b905c4ff9f6d1b3_zxmm6d.jpg" alt="Buku 4">
+    <p>The 7 Habits of Highly Effective People</p>
+    <a href="https://drive.google.com/file/d/1DLbGvHQ8Ct_qASE8yXmnI2rexZwxHOo7/view?usp=drivesdk" target="_blank">Download File</a>
 </div>
-
-<!-- EVENT TERKINI -->
+<div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742385826/83bec07a6da897d33a5e874aee41aa74_lkp4tq.jpg" alt="Buku 5">
+    <p>Sales Management Simplified</p>
+    <a href="https://drive.google.com/file/d/1DLbGvHQ8Ct_qASE8yXmnI2rexZwxHOo7/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+<div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386298/Screenshot_20250319_142334_Gallery_1_gcrn9l.jpg" alt="Buku 6">
+    <p>The Art of Strategy: A Game Theorist's Guide to Success in Business & Life</p>
+    <a href="https://drive.google.com/file/d/1DIn4v2DVqDTlI4bV-3NfUH-P7FMWqvt5/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+<div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386478/Screenshot_20250319_142352_Gallery_1_suwlfb.jpg" alt="Buku 7">
+    <p>Master Mentors: 30 Transformative Insights from Our Greatest Minds</p>
+    <a href="https://drive.google.com/file/d/1CudR0cpOFyEZT6oVyc0f7oYCv435kzzq/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+<div class="buku">
+    <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1742386915/Screenshot_20250319_192026_Drive_cq8kl2.jpg" alt="Buku 8">
+    <p>Get it Done: Surprising Lessons from the Science of Motivation</p>
+    <a href="https://drive.google.com/file/d/1FHRw0bYtWv5m9MWm30HND1G7DAwZYsMY/view?usp=drivesdk" target="_blank">Download File</a>
+</div>
+</div>
+  <!-- EVENT TERKINI -->
 <div class="rekomendasi fade-in">
     <h3>Event Terkini</h3>
     <div class="buku-container">
-        <!-- Contoh item event -->
         <div class="buku">
             <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1745995066/Screenshot_20250430_133117_Instagram_oco6i3.jpg" alt="Event 1">
-            <p>Webinar Literasi E-Resources UT</p>
-            <a href="https://www.instagram.com/p/DIssMeTTraB/" target="_blank">Lihat di Instagram</a>
+            <p>Event: Webinar Literasi Pemanfaatan Akses E-Resources Perpustakaan UT "e-Journal Taylor & Francis"</p>
+            <a href="https://www.instagram.com/p/DIssMeTTraB/?igsh=MW14ZWxjNWlrNW44Mw==" target="_blank">Lihat di Instagram</a>
         </div>
-        <!-- Tambahkan event lainnya di sini -->
+        <div class="buku">
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1745995218/Screenshot_20250430_133135_Instagram_nzebq9.jpg" alt="Event 2">
+            <p>Event: Webinar Peran Duta literasi Dalam Pengembangan Perpustakaan Sekolah</p>
+            <a href="https://www.instagram.com/p/C6p49L_v_4S/?igsh=MjZicXhzOHV3Mnph" target="_blank">Lihat di Instagram</a>
+        </div>
+        <div class="buku">
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1745995155/Screenshot_20250430_133144_Instagram_xggjn8.jpg" alt="Event 3">
+            <p>Event: Webinar Nasional "Academic Writing Skills : Meningkatkan Kemampuan Penulisan Karya Ilmiah Dan Tugas Akhir Bagi Mahasiswa Dan Dosen"</p>
+            <a href="https://www.instagram.com/p/DGAhU6RStTM/?igsh=MmJlenF3OWI5cWhp" target="_blank">Lihat di Instagram</a>
+        </div>
+        <div class="buku">
+            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1745995257/Screenshot_20250430_133309_Instagram_ozr1wg.jpg" alt="Event 4">
+            <p>Event: Pelatihan dan Workshop Pemanfaatan E-Journal Emerald dan E-Journal IEEXplore Perpustakaan Universitas Mercu Buana</p>
+            <a href="https://www.instagram.com/p/DHm92RqSPgu/?igsh=MTJnMHl3c2g4ZTBkdw==" target="_blank">Lihat di Instagram</a>
+        </div>
     </div>
 </div>
-
-<!-- TABEL PERKALIAN -->
+    <!-- TABEL PERKALIAN 10 x 10 -->
 <div class="about fade-in" style="margin-top: 50px;">
     <h2 style="text-align: center; font-size: 28px; margin-bottom: 20px;">Tabel Perkalian 10 x 10</h2>
     <div style="overflow-x: auto;">
@@ -268,9 +271,52 @@
     </div>
 </div>
 
+<!-- CSS untuk tampilan tabel -->
+<style>
+    .tabel-perkalian {
+        border-collapse: collapse;
+        margin: auto;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabel-perkalian th,
+    .tabel-perkalian td {
+        border: 1px solid #ccc;
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    .tabel-perkalian th {
+        background-color: #007acc;
+        color: white;
+    }
+
+    .tabel-perkalian tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .tabel-perkalian tbody tr:hover {
+        background-color: #e0f7fa;
+        transition: background-color 0.3s ease;
+    }
+</style>
+
 <footer>
-    <p>&copy; 2025 Perpustakaan Jesika Yusnita Laoly. All rights reserved.</p>
+    <p>&copy; 2025 All rights reserved</p>
 </footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let elements = document.querySelectorAll(".fade-in");
+        elements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add("visible");
+            }, index * 300);
+        });
+    });
+</script>
 
 </body>
 </html>
