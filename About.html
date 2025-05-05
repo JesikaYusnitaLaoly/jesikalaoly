@@ -100,38 +100,58 @@
         }
 
         /* VISION, MISSION, SERVICES */
-        .section-title {
-            font-size: 1.8em;
-            color: #00BFFF;
-            margin-top: 40px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+        .mission-vision-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9fbfd;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in;
+}
 
-        .section-content {
-            margin-top: 20px;
-            text-align: left;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
+.vision-box {
+    background-color: #e6f4ff;
+    border-left: 6px solid #00BFFF;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    position: relative;
+}
 
-        .section-content ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
+.icon-vision {
+    font-size: 2em;
+    color: #00BFFF;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 
-        .section-content img {
-            max-width: 100%;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
+.mission-list h4 {
+    font-size: 1.5em;
+    color: #00BFFF;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-        .section-content h4 {
-            font-size: 1.5em;
-            color: #00BFFF;
-            margin-bottom: 10px;
-        }
+.mission-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #00BFFF;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.mission-icon {
+    font-size: 1.4em;
+    color: #00BFFF;
+    margin-top: 5px;
+}
 
         /* FOOTER */
         footer {
@@ -198,22 +218,43 @@
         </tr>
     </table>
 
-    <!-- Visi dan Misi -->
+   <!-- VISI DAN MISI -->
 <div class="section-title">Visi dan Misi Perpustakaan</div>
-<div class="visi-misi-container">
-    <div class="visi-box">
-        <h4><span class="icon">🎯</span>Visi</h4>
-        <p>Menjadi perpustakaan unggulan yang mendukung pengembangan ilmu pengetahuan, teknologi, dan budaya melalui layanan informasi yang cepat, akurat, dan berbasis digital.</p>
+<div class="section-content mission-vision-section">
+
+    <!-- VISI -->
+    <div class="vision-box">
+        <i class="fas fa-eye icon-vision"></i>
+        <h4>Visi</h4>
+        <p>
+            Menjadi perpustakaan yang berorientasi pada pengembangan ilmu pengetahuan dan teknologi 
+            melalui layanan informasi yang cepat, akurat, dan berbasis digital.
+        </p>
     </div>
 
-    <div class="misi-box">
-        <h4><span class="icon">🚀</span>Misi</h4>
-        <ul>
-            <li>Menyediakan layanan informasi yang mudah diakses bagi sivitas akademika dan masyarakat umum.</li>
-            <li>Meningkatkan kualitas layanan melalui pemanfaatan teknologi informasi terkini.</li>
-            <li>Menjadi pusat sumber belajar yang mendukung kegiatan pendidikan, penelitian, dan pengabdian masyarakat.</li>
-            <li>Menjalin kerja sama dengan perpustakaan dan lembaga informasi lainnya di tingkat nasional dan internasional.</li>
-        </ul>
+    <!-- MISI -->
+    <div class="mission-list">
+        <h4><i class="fas fa-bullseye"></i> Misi</h4>
+
+        <div class="mission-item">
+            <i class="fas fa-universal-access mission-icon"></i>
+            <p>Menyediakan layanan informasi yang mudah diakses bagi sivitas akademika dan masyarakat umum.</p>
+        </div>
+
+        <div class="mission-item">
+            <i class="fas fa-microchip mission-icon"></i>
+            <p>Meningkatkan kualitas layanan melalui pemanfaatan teknologi informasi terkini.</p>
+        </div>
+
+        <div class="mission-item">
+            <i class="fas fa-book-open mission-icon"></i>
+            <p>Menjadi pusat sumber belajar yang mendukung kegiatan pendidikan, penelitian, dan pengabdian masyarakat.</p>
+        </div>
+
+        <div class="mission-item">
+            <i class="fas fa-handshake mission-icon"></i>
+            <p>Menjalin kerja sama dengan perpustakaan dan lembaga informasi lainnya di tingkat nasional dan internasional untuk memperluas akses dan kualitas sumber informasi.</p>
+        </div>
     </div>
 </div>
 
