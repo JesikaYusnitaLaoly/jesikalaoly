@@ -134,50 +134,180 @@
     <p><strong>⏰ Jam Layanan:</strong> Senin–Jumat, 08.00 – 16.00 WIB</p>
 </div>
 
-   <div class="section-title" style="margin-top: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+   <!-- TESTIMONI PENGUNJUNG -->
+<div class="section-title" style="margin-top: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
     <h3 style="color: #00BFFF; margin-bottom: 15px;">Testimoni Pengunjung</h3>
 </div>
 
-<div class="section-content">
-    <div style="background-color: #f9f9f9; border-left: 5px solid #00BFFF; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <p style="font-style: italic; color: #555;">
+<div class="section-content" style="display: flex; flex-direction: column; gap: 20px; animation: fadeInUp 1s ease forwards;">
+    <div class="testimoni-card">
+        <p>
             "Perpustakaan ini sangat nyaman dan koleksinya lengkap. Saya bisa mengerjakan tugas dengan tenang dan mendapatkan referensi yang saya butuhkan!"
         </p>
-        <p style="text-align: right; font-weight: bold; color: #00BFFF;">
-            – Rina, Mahasiswa Ilmu Komunikasi
-        </p>
+        <p class="nama">– Rina, Mahasiswa Ilmu Komunikasi</p>
     </div>
 
-    <div style="background-color: #f9f9f9; border-left: 5px solid #00BFFF; border-radius: 10px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <p style="font-style: italic; color: #555;">
+    <div class="testimoni-card">
+        <p>
             "Layanannya sangat ramah dan teknologi digitalnya memudahkan saya mengakses jurnal dari rumah."
         </p>
-        <p style="text-align: right; font-weight: bold; color: #00BFFF;">
-            – Dimas, Mahasiswa Teknik Informatika
-        </p>
+        <p class="nama">– Dimas, Mahasiswa Teknik Informatika</p>
     </div>
 </div>
 
+<!-- STYLE -->
+<style>
+    .testimoni-card {
+        background-color: #f9f9f9;
+        border-left: 5px solid #00BFFF;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-style: italic;
+        color: #555;
+    }
+
+    .testimoni-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .testimoni-card .nama {
+        text-align: right;
+        font-weight: bold;
+        color: #00BFFF;
+        margin-top: 10px;
+        font-style: normal;
+    }
+
+    /* Animasi fade-in-up */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+        .section-content {
+            padding: 10px;
+        }
+
+        .testimoni-card {
+            padding: 15px;
+        }
+    }
+</style>
+
+
 <!-- CONTACT US SECTION -->
-<div class="container">
-    <div class="contact-card">
+<div class="container contact-section">
+    <div class="contact-card animated-fade">
         <h2>Hubungi Kami</h2>
         <p>Jika kamu memiliki pertanyaan, masukan, atau ingin tahu lebih lanjut, silakan isi formulir di bawah ini.</p>
 
         <form action="contact.php" method="GET">
-            <label>Nama:</label>
-            <input type="text" name="nama-lengkap" required />
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama-lengkap" required />
 
-            <label>Email:</label>
-            <input type="email" name="email" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
 
-            <label>Isi Komentar:</label>
-            <textarea name="komentar" rows="4" required></textarea>
+            <label for="komentar">Isi Komentar:</label>
+            <textarea id="komentar" name="komentar" rows="4" required></textarea>
 
-            <button type="submit" onclick="alert('Terima kasih! Kami akan segera menghubungi Anda.')">Submit</button>
+            <button type="submit" onclick="alert('Terima kasih! Kami akan segera menghubungi Anda.')">Kirim</button>
         </form>
     </div>
 </div>
+
+<!-- STYLE -->
+<style>
+    .contact-section {
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+        background-color: #f5f5f5;
+    }
+
+    .contact-card {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        animation: fadeInUp 1s ease forwards;
+    }
+
+    .contact-card h2 {
+        color: #00BFFF;
+        margin-bottom: 10px;
+    }
+
+    .contact-card p {
+        margin-bottom: 20px;
+        color: #444;
+    }
+
+    .contact-card label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-family: inherit;
+    }
+
+    .contact-card button {
+        background-color: #00BFFF;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+    }
+
+    .contact-card button:hover {
+        background-color: #009acd;
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+        .contact-card {
+            padding: 20px;
+        }
+    }
+
+    /* Animasi */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
 
     <div class="contact-card" style="margin-top: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
     <h3 style="color: #00BFFF; margin-bottom: 15px;">📍 Lokasi Kami</h3>
@@ -192,14 +322,110 @@
     </iframe>
 </div>
 
-     <div class="contact-card" style="margin-top: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-align: center;">
-    <h3 style="color: #00BFFF; margin-bottom: 15px;">📣 Ikuti Kami</h3>
-    <div style="font-size: 1.1em;">
-        <a href="#" style="margin: 0 15px; text-decoration: none; color: #333; transition: color 0.3s;">Instagram</a> |
-        <a href="#" style="margin: 0 15px; text-decoration: none; color: #333; transition: color 0.3s;">Facebook</a> |
-        <a href="#" style="margin: 0 15px; text-decoration: none; color: #333; transition: color 0.3s;">Twitter</a>
+   <!-- IKUTI KAMI SECTION -->
+<div class="contact-card social-section">
+    <h3>📣 Ikuti Kami</h3>
+    <div class="social-links">
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
     </div>
 </div>
+
+<!-- STYLE -->
+<style>
+    .social-section {
+        margin-top: 30px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        animation: fadeIn 1s ease;
+    }
+
+    .social-section h3 {
+        color: #00BFFF;
+        margin-bottom: 15px;
+        font-size: 1.4em;
+    }
+
+    .social-links a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #00BFFF;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-links a:hover {
+        color: #007bb5;
+        transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 500px) {
+        .social-links a {
+            display: block;
+            margin: 10px 0;
+        }
+    }
+</style>
+<!-- LOKASI KAMI -->
+<div class="contact-card location-section">
+    <h3>📍 Lokasi Kami</h3>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18...etc" 
+        width="100%" 
+        height="250" 
+        style="border:0; border-radius: 10px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+<!-- STYLE -->
+<style>
+    .location-section {
+        margin-top: 30px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        animation: fadeInUp 1s ease;
+    }
+
+    .location-section h3 {
+        color: #00BFFF;
+        margin-bottom: 15px;
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
 <footer>
     <p>&copy; 2025 All rights reserved</p>
 </footer>
