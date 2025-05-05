@@ -153,14 +153,15 @@
 <header>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
     <h1>Perpustakaan Jesika Yusnita Laoly</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Homepage</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="http://localhost/tabel.php">PHP</a></li>
-        </ul>
-    </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+<nav id="menuNav">
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="http://localhost/tabel.php">PHP</a></li>
+    </ul>
+</nav>
 </header>
 
 <!-- TENTANG SAYA -->
@@ -241,7 +242,53 @@
         </div>
     </div>
 </div>
+    <!-- CSS untuk Humburger Button -->
+<style>
+    /* Hamburger Button */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
 
+/* Responsive Nav Menu */
+#menuNav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+#menuNav ul li {
+    margin: 0 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #menuNav ul {
+        flex-direction: column;
+        display: none;
+        background-color: #00BFFF;
+        padding: 10px;
+    }
+
+    #menuNav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    #menuNav.show ul {
+        display: flex;
+    }
+}
+</style>
 <!-- CSS untuk tampilan tabel -->
 <style>
     .tabel-perkalian {
@@ -369,6 +416,12 @@
             }, index * 300);
         });
     });
+</script>
+    <script>
+    function toggleMenu() {
+        var menu = document.getElementById("menuNav");
+        menu.classList.toggle("show");
+    }
 </script>
 
 </body>
