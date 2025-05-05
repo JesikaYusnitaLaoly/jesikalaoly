@@ -126,7 +126,7 @@
     </nav>
 </header>
 
-  <div class="contact-card" style="margin-top: 30px; background: white; padding: 40px 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); min-height: 250px;">
+ <div class="contact-card" style="margin-top: 30px; background: white; padding: 40px 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 300px; text-align: center;">
     <h3 style="color: #00BFFF; margin-bottom: 20px;">Informasi Kontak</h3>
     <p><strong>📍 Alamat:</strong> Perpustakaan Universitas Sumatera Utara, Jl. Dr. Mansur No. 9, Medan</p>
     <p><strong>📧 Email:</strong> <a href="mailto:perpustakaan@usu.ac.id" style="color: #00BFFF; text-decoration: none;">perpustakaan@usu.ac.id</a></p>
@@ -310,20 +310,21 @@
 </style>
 
 <!-- LOKASI KAMI -->
-<div class="contact-card location-section">
-    <h3>📍 Lokasi Kami</h3>
+<div class="contact-card location-section" style="margin-top: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-align: center;">
+    <h3 style="color: #00BFFF; margin-bottom: 20px;">📍 Lokasi Kami</h3>
     <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18...etc" 
         width="100%" 
-        height="400"  <!-- UBAH INI agar kotaknya lebih panjang -->
-        style="border:0; border-radius: 10px;" 
+        height="400" <!-- Mengatur tinggi kotak lebih panjang -->
+        style="border:0; border-radius: 10px; max-width: 100%; display: block; margin: 0 auto;" 
         allowfullscreen="" 
         loading="lazy" 
         referrerpolicy="no-referrer-when-downgrade">
     </iframe>
 </div>
-    
- <div class="contact-card" style="margin-top: 30px; background: white; padding: 40px 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-align: center; min-height: 200px;">
+
+<!-- Ikuti Kami -->
+<div class="contact-card" style="margin-top: 30px; background: white; padding: 40px 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-align: center; min-height: 250px;">
     <h3 style="color: #00BFFF; margin-bottom: 20px;">📣 Ikuti Kami</h3>
     <div style="font-size: 1.2em;">
         <a href="#" style="margin: 0 20px; text-decoration: none; color: #333; transition: color 0.3s;">Instagram</a> |
