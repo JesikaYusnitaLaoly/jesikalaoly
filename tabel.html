@@ -2,73 +2,168 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Tabel Perkalian</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Jesika Yusnita Laoly</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+        /* HEADER */
+        header {
+            background-color: #00BFFF;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        header nav ul {
             padding: 0;
+            list-style: none;
         }
 
-        nav {
-            background-color: #333;
-            padding: 10px 20px;
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
         }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li a {
+        header nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease-in-out;
         }
 
-        nav ul li a:hover {
-            text-decoration: underline;
+        header nav ul li a:hover {
+            color: #FFD700;
         }
 
-        h2 {
+        /* ANIMASI FADE-IN */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SECTION "TENTANG SAYA" */
+        .about {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            margin-top: 30px;
         }
 
-        table {
-            border-collapse: collapse;
-            margin: 30px auto;
+        .about h2 {
+            color: #00BFFF;
+        }
+
+        .about p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* REKOMENDASI BUKU */
+        .rekomendasi {
             text-align: center;
+            padding: 20px;
         }
 
-        th, td {
-            border: 1px solid #000;
+        .buku-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .buku {
+            width: 220px;
             padding: 10px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        th {
+        .buku:hover {
+            transform: scale(1.05);
+        }
+
+        .buku img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .buku p {
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .buku a {
+            display: block;
+            margin-top: 5px;
+            padding: 8px;
+            background: #00BFFF;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .buku a:hover {
+            background: #005f9e;
+        }
+
+        /* FOOTER */
+        footer {
             background-color: #00BFFF;
             color: white;
+            padding: 20px 10px;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-     <nav>
-        <ul>
-            <li><a href="index.html">Homepage</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="tabel.html">Tabel</a></li>
-        </ul>
-    </nav>
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+    <h1>Perpustakaan Jesika Yusnita Laoly</h1>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+<nav id="menuNav">
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="http://localhost/tabel.php">PHP</a></li>
+        <li><a href="tabel.html">Tabel</a></li>
+    </ul>
+</nav>
+</header>
 
     <h2>Tabel Perkalian 10 x 10</h2>
 
