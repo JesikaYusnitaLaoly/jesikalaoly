@@ -5,44 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Jesika Yusnita Laoly</title>
     <style>
-        /* HEADER */
-        header {
-            background-color: #00BFFF;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            animation: slideDown 1s ease-out;
-        }
+        .header-library {
+    position: relative;
+    background-image: url('https://res.cloudinary.com/dwa2jqgtp/image/upload/v1746550161/12a0f1b8-80c3-4bc1-a963-e24f157907f4_mg8ofe.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
 
-        @keyframes slideDown {
-            from { transform: translateY(-100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
+.header-library .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4); /* overlay gelap agar teks terbaca */
+    z-index: 0;
+}
 
-        header img {
-            height: 50px;
-        }
+.header-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+}
 
-        header nav ul {
-            padding: 0;
-            list-style: none;
-        }
+.header-content img {
+    height: 60px;
+    margin-bottom: 10px;
+}
 
-        header nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
+.header-content h1 {
+    font-size: 28px;
+    margin: 10px 0;
+    color: white;
+}
 
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease-in-out;
-        }
+.header-content nav ul {
+    padding: 0;
+    list-style: none;
+}
 
-        header nav ul li a:hover {
-            color: #FFD700;
-        }
+.header-content nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.header-content nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.header-content nav ul li a:hover {
+    color: #FFD700;
+}
+
 
         /* CONTAINER */
         .container {
@@ -157,18 +183,21 @@
 </head>
 <body>
 
-<header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
-    <h1>Perpustakaan Jesika Yusnita Laoly</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Homepage</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="tabel.html">Tabel</a></li>
-            <li><a href="http://localhost/tabel.php">PHP</a></li>
-        </ul>
-    </nav>
+<header class="header-library">
+    <div class="overlay"></div>
+    <div class="header-content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+        <h1>Perpustakaan Jesika Yusnita Laoly</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="tabel.html">Tabel</a></li>
+                <li><a href="http://localhost/tabel.php">PHP</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <!-- ABOUT ME SECTION -->
