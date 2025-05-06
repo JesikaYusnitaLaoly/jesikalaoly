@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Perkalian 10x10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+
+        nav {
+            background-color: #00BFFF;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: #00BFFF;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px auto;
+            max-width: 90%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 600px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #00BFFF;
+            color: white;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Beranda</a>
+        <a href="#">Profil</a>
+        <a href="#">Tabel Perkalian</a>
+        <a href="#">Kontak</a>
+    </nav>
+
+    <h2>Tabel Perkalian 10 x 10</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>x</th>
+                    <!-- Header 1–10 -->
+                    {% for i in range(1, 11) %}
+                    <th>{{ i }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Isi baris 1–10 -->
+                {% for i in range(1, 11) %}
+                <tr>
+                    <th>{{ i }}</th>
+                    {% for j in range(1, 11) %}
+                    <td>{{ i * j }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
