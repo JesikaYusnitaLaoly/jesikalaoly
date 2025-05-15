@@ -81,11 +81,6 @@
             transform: translateY(0);
         }
 
-          <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login Website</title>
-  <link rel="stylesheet" href="style.css" />
-
         /* SECTION "TENTANG SAYA" */
         .about {
             max-width: 800px;
@@ -176,63 +171,6 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        body {
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(to right, #00BFFF, #1e90ff);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-box {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-  width: 320px;
-  text-align: center;
-}
-
-.login-box h2 {
-  margin-bottom: 25px;
-  color: #00BFFF;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.login-box button {
-  width: 100%;
-  padding: 12px;
-  background-color: #00BFFF;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.login-box button:hover {
-  background-color: #009acd;
-}
-
-#error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
     </style>
 </head>
 <body>
@@ -253,34 +191,6 @@
         </nav>
     </div>
 </header>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const errorMsg = document.getElementById("error-message");
-
-  // Username dan password contoh
-  const validUser = "admin";
-  const validPass = "123456";
-
-  if (username === validUser && password === validPass) {
-    alert("Login berhasil!");
-    window.location.href = "dashboard.html"; // ganti dengan halaman tujuanmu
-  } else {
-    errorMsg.textContent = "Username atau password salah.";
-  }
-});
-
- <div class="login-container">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <input type="text" id="username" placeholder="Username" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-      <p id="error-message"></p>
-    </form>
-  </div>
 
 <!-- TENTANG SAYA -->
 <div class="about fade-in">
