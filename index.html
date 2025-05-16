@@ -538,92 +538,89 @@
         menu.classList.toggle("show");
     }
 </script>
+<!-- Popup Cookie -->
+<div id="cookiePopup" style="
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e8f0fe;
+  border: 1px solid #b0c4de;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  font-family: 'Segoe UI', sans-serif;
+">
+  <p style="margin: 0 0 15px;">
+    <strong>Sebelum mulai, atur kuki dulu ya 🍪</strong><br>
+    Kuki esensial wajib agar situs ini berjalan dengan baik. Kami menggunakan kuki lain untuk analisis & personalisasi, hanya jika Anda setuju.
+    <br>
+    <a href="#" style="color: #007bff; text-decoration: underline;">Kebijakan kuki kami</a>
+  </p>
+  <div style="text-align: right;">
+    <button onclick="setCookieConsent(true)" style="
+      background-color: #673ab7;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      cursor: pointer;
+    ">Terima semua kuki</button>
+    <button onclick="setCookieConsent(false)" style="
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    ">Kelola kuki</button>
+  </div>
+</div>
 
-<h1 id="welcomeMessage">Halo, siapa kamu? 😊</h1>
+<script>
+  // Fungsi untuk set cookie
+  function setCookie(nama, nilai, hari) {
+    const d = new Date();
+    d.setTime(d.getTime() + (hari * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
+  }
 
-  <input type="text" id="nama" placeholder="Ketik namamu di sini">
-  <br>
-  <button onclick="simpanNama()">🎉 Simpan Nama</button>
-  <button onclick="hapusCookie()">🧹 Hapus Cookie</button>
-
-  <div id="notif" class="success"></div>
-
-  <script>
-    function setCookie(nama, nilai, hari) {
-      const d = new Date();
-      d.setTime(d.getTime() + (hari * 24 * 60 * 60 * 1000));
-      const expires = "expires=" + d.toUTCString();
-      document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
-    }
-
-    function getCookie(nama) {
-      const namaCookie = nama + "=";
-      const decodedCookie = decodeURIComponent(document.cookie);
-      const ca = decodedCookie.split(';');
-      for(let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(namaCookie) === 0) {
-          return c.substring(namaCookie.length, c.length);
-        }
+  function getCookie(nama) {
+    const cname = nama + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf(cname) === 0) {
+        return c.substring(cname.length, c.length);
       }
-      return "";
     }
+    return "";
+  }
 
-    function tampilkanPesan() {
-      const nama = getCookie("namaPengguna");
-      const h1 = document.getElementById("welcomeMessage");
-      const notif = document.getElementById("notif");
-
-      if (nama !== "") {
-        h1.textContent = `Selamat datang kembali, ${nama}! 🌟`;
-        h1.style.color = getWarnaDariNama(nama);
-        h1.classList.add("fade-in");
-        notif.textContent = "";
-      }
+  // Fungsi muncul/hilang popup
+  function checkCookieConsent() {
+    const consent = getCookie("cookie_consent");
+    if (!consent) {
+      document.getElementById("cookiePopup").style.display = "block";
     }
+  }
 
-    function simpanNama() {
-      const nama = document.getElementById("nama").value.trim();
-      const notif = document.getElementById("notif");
+  function setCookieConsent(terima) {
+    setCookie("cookie_consent", terima ? "yes" : "no", 365);
+    document.getElementById("cookiePopup").style.display = "none";
+    alert(terima ? "Terima kasih telah menyetujui kuki kami!" : "Anda memilih untuk mengelola kuki.");
+  }
 
-      if (nama !== "") {
-        setCookie("namaPengguna", nama, 7);
-        tampilkanPesan();
-        notif.textContent = `Nama "${nama}" disimpan ke cookie! ✅`;
-      } else {
-        notif.textContent = "Nama tidak boleh kosong 😅";
-      }
-    }
-
-    function hapusCookie() {
-      setCookie("namaPengguna", "", -1);
-      const h1 = document.getElementById("welcomeMessage");
-      h1.textContent = "Cookie sudah dibersihkan. Halo, siapa kamu? 😊";
-      h1.style.color = "#333";
-      document.getElementById("notif").textContent = "Cookie dihapus 🗑️";
-      document.getElementById("nama").value = "";
-    }
-
-    function getWarnaDariNama(nama) {
-      // Bikin warna acak dari nama
-      let hash = 0;
-      for (let i = 0; i < nama.length; i++) {
-        hash = nama.charCodeAt(i) + ((hash << 5) - hash);
-      }
-      let warna = '#';
-      for (let i = 0; i < 3; i++) {
-        let nilai = (hash >> (i * 8)) & 0xFF;
-        warna += ('00' + nilai.toString(16)).slice(-2);
-      }
-      return warna;
-    }
-
-    // Jalankan saat halaman dibuka
-    tampilkanPesan();
-  </script>
+  // Tampilkan popup saat halaman dimuat
+  window.onload = checkCookieConsent;
+</script>
 
 </body>
 </html>
