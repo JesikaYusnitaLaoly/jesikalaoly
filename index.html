@@ -80,26 +80,66 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+/* SECTION "TENTANG SAYA" */
+.about {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        /* SECTION "TENTANG SAYA" */
-        .about {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+.about-container {
+  max-width: 800px;
+  text-align: center;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.1);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
 
-        .about h2 {
-            color: #00BFFF;
-        }
+.about-title {
+  font-size: 32px;
+  color: #00BFFF;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 
-        .about p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
+.about-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* ANIMASI FADE IN UP */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIF */
+@media screen and (max-width: 600px) {
+  .about-container {
+    padding: 20px;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+}
 
         /* REKOMENDASI BUKU */
         .rekomendasi {
@@ -192,20 +232,24 @@
     </div>
 </header>
 
-<!-- TENTANG SAYA -->
-<div class="about fade-in">
-    <h2>Tentang Saya</h2>
-    <p>Selamat datang di perpustakaan digital saya! Website ini adalah tempat saya mengarsipkan berbagai koleksi tulisan, artikel, dan referensi yang bermanfaat bagi siapa saja yang mencintai ilmu dan wawasan baru.</p>
-</div>
+<!-- Bagian Tentang Saya -->
+<section id="tentang" class="about animated-section">
+  <div class="about-container">
+    <h2 class="about-title">Tentang Saya</h2>
+    <p class="about-text">
+      Selamat datang di perpustakaan digital saya! Website ini adalah tempat saya mengarsipkan berbagai koleksi tulisan, artikel, dan referensi yang bermanfaat bagi siapa saja yang mencintai ilmu dan wawasan baru.
+    </p>
+  </div>
+</section>
     
- <!-- Bagian Kerja Sama -->
+<!-- Bagian Kerja Sama -->
 <section id="kerjasama" class="kerjasama-section">
   <div class="kerjasama-container">
     <h2 class="kerjasama-title">🤝 Kerja Sama dengan Perpustakaan USU</h2>
     <p class="kerjasama-desc">
       Website ini menjalin kolaborasi dengan <strong>Perpustakaan Universitas Sumatera Utara (USU)</strong> untuk memperkuat akses informasi digital, layanan referensi akademik, serta literasi informasi bagi seluruh pengguna.
     </p>
-    <a href="https://library.usu.ac.id/" target="_blank" class="kerjasama-btn">
+    <a href="https://library.usu.ac.id/" target="_blank" class="kerjasama-btn" aria-label="Kunjungi Perpustakaan USU">
       Kunjungi Perpustakaan USU 📚
     </a>
   </div>
@@ -217,8 +261,8 @@
     <h2 class="search-title">🔍 Cari Buku di Perpustakaan</h2>
     <p class="search-desc">Masukkan judul atau kata kunci untuk mencari koleksi buku yang tersedia.</p>
     <form class="search-form" action="#" method="get" onsubmit="return false;">
-      <input type="text" class="search-input" placeholder="Cari judul, pengarang, atau topik...">
-      <button type="submit" class="search-btn">Cari</button>
+      <input type="text" class="search-input" placeholder="Cari judul, pengarang, atau topik..." aria-label="Cari buku">
+      <button type="submit" class="search-btn" aria-label="Cari">Cari</button>
     </form>
   </div>
 </section>
@@ -438,53 +482,122 @@
     </div>
 </div>
 <style>
-  /* Bagian Kerja Sama - Selaras dengan Bagian About */
+ /* Bagian Kerja Sama - Selaras dengan Bagian About + Animasi + Responsif */
 .kerjasama-section {
   background: #f9f9f9;
   padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
 }
 
 .kerjasama-container {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  background: #ffffff;
-  padding: 20px;
+  background: #fff;
+  padding: 25px 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.kerjasama-container:hover {
+  box-shadow: 0 8px 20px rgba(0,191,255,0.3);
 }
 
 .kerjasama-title {
-  font-size: 28px;
+  font-size: 2rem;
   color: #00BFFF;
   margin-bottom: 20px;
-  font-weight: bold;
+  font-weight: 700;
+  animation: slideInDown 0.6s ease forwards;
+  opacity: 0;
 }
 
 .kerjasama-desc {
-  font-size: 16px;
+  font-size: 1rem;
   color: #333;
   line-height: 1.6;
   margin-bottom: 30px;
+  animation: slideInDown 0.8s ease forwards;
+  opacity: 0;
 }
 
 .kerjasama-btn {
   background-color: #00BFFF;
   color: white;
-  padding: 12px 25px;
+  padding: 14px 28px;
   border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 191, 255, 0.3);
+  display: inline-block;
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
 }
 
-.kerjasama-btn:hover {
+.kerjasama-btn:hover,
+.kerjasama-btn:focus {
   background-color: #009acd;
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 154, 205, 0.5);
+  outline: none;
 }
 
+/* Responsif */
+@media (max-width: 480px) {
+  .kerjasama-section {
+    padding: 30px 15px;
+  }
+  
+  .kerjasama-container {
+    padding: 20px 15px;
+  }
+  
+  .kerjasama-title {
+    font-size: 1.6rem;
+  }
+  
+  .kerjasama-desc {
+    font-size: 0.95rem;
+  }
+  
+  .kerjasama-btn {
+    padding: 12px 22px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Animasi keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
  </style>   
 
 <!-- CSS untuk animasi -->
@@ -503,74 +616,119 @@
     }
 </style>
     <style>
-    /* Bagian Search Buku */
+/* Bagian Search Buku */
 .search-section {
   background-color: #f9f9f9;
-  padding: 40px 20px;
+  padding: 50px 20px;
   font-family: 'Segoe UI', sans-serif;
+  animation: fadeInSection 1s ease forwards;
 }
 
 .search-container {
   max-width: 800px;
   margin: 0 auto;
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-container:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .search-title {
-  font-size: 28px;
+  font-size: 30px;
   color: #00BFFF;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 700;
+  animation: slideInTop 0.7s ease forwards;
 }
 
 .search-desc {
-  font-size: 16px;
+  font-size: 17px;
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  animation: slideInTop 0.9s ease forwards;
 }
 
 .search-form {
   display: flex;
   justify-content: center;
+  gap: 15px;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
 .search-input {
-  padding: 12px 15px;
-  width: 60%;
-  max-width: 400px;
-  border: 2px solid #00BFFF;
-  border-radius: 6px;
+  padding: 14px 18px;
+  flex: 1 1 250px;
+  max-width: 450px;
   font-size: 16px;
+  border: 2px solid #00BFFF;
+  border-radius: 8px;
   outline: none;
-  transition: 0.3s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 0 0 rgba(0,0,0,0);
 }
 
 .search-input:focus {
   border-color: #009acd;
+  box-shadow: 0 0 8px #009acd;
+  animation: pulseBorder 1.5s infinite alternate;
 }
 
 .search-btn {
   background-color: #00BFFF;
-  color: #fff;
-  padding: 12px 20px;
+  color: white;
+  padding: 14px 28px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 191, 255, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 191, 255, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .search-btn:hover {
   background-color: #009acd;
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0 8px 18px rgba(0, 154, 205, 0.5);
+}
+
+/* Animasi */
+@keyframes fadeInSection {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideInTop {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulseBorder {
+  0% { box-shadow: 0 0 8px #009acd; }
+  100% { box-shadow: 0 0 16px #00BFFF; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .search-form {
+    flex-direction: column;
+  }
+  
+  .search-input {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .search-btn {
+    width: 100%;
+    padding: 14px 0;
+  }
 }
 </style>
 
