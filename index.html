@@ -538,7 +538,21 @@
         menu.classList.toggle("show");
     }
 </script>
-<!-- Popup Cookie -->
+
+ <script>
+  // Fungsi untuk set cookie (tidak perlu kalau tidak menyimpan persetujuan)
+  function setCookieConsent(terima) {
+    document.getElementById("cookiePopup").style.display = "none";
+    alert(terima ? "Terima kasih telah menyetujui kuki kami!" : "Anda memilih untuk mengelola kuki.");
+  }
+
+  // Langsung tampilkan popup saat halaman dibuka
+  window.onload = function () {
+    document.getElementById("cookiePopup").style.display = "block";
+  };
+</script>
+
+    <!-- Popup Cookie -->
 <div id="cookiePopup" style="
   position: fixed;
   bottom: 20px;
@@ -581,46 +595,6 @@
     ">Kelola kuki</button>
   </div>
 </div>
-
-<script>
-  // Fungsi untuk set cookie
-  function setCookie(nama, nilai, hari) {
-    const d = new Date();
-    d.setTime(d.getTime() + (hari * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + d.toUTCString();
-    document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
-  }
-
-  function getCookie(nama) {
-    const cname = nama + "=";
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const ca = decodedCookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i].trim();
-      if (c.indexOf(cname) === 0) {
-        return c.substring(cname.length, c.length);
-      }
-    }
-    return "";
-  }
-
-  // Fungsi muncul/hilang popup
-  function checkCookieConsent() {
-    const consent = getCookie("cookie_consent");
-    if (!consent) {
-      document.getElementById("cookiePopup").style.display = "block";
-    }
-  }
-
-  function setCookieConsent(terima) {
-    setCookie("cookie_consent", terima ? "yes" : "no", 365);
-    document.getElementById("cookiePopup").style.display = "none";
-    alert(terima ? "Terima kasih telah menyetujui kuki kami!" : "Anda memilih untuk mengelola kuki.");
-  }
-
-  // Tampilkan popup saat halaman dimuat
-  window.onload = checkCookieConsent;
-</script>
 
 </body>
 </html>
