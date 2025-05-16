@@ -539,15 +539,19 @@
     }
 </script>
 
-<h1 id="welcomeMessage">Selamat datang!</h1>
-  <input type="text" id="nama" placeholder="Nama Anda">
-  <button onclick="simpanNama()">Simpan</button>
-  <button onclick="hapusCookie()">Hapus Cookie</button>
+<h1 id="welcomeMessage">Halo, siapa kamu? 😊</h1>
+
+  <input type="text" id="nama" placeholder="Ketik namamu di sini">
+  <br>
+  <button onclick="simpanNama()">🎉 Simpan Nama</button>
+  <button onclick="hapusCookie()">🧹 Hapus Cookie</button>
+
+  <div id="notif" class="success"></div>
 
   <script>
     function setCookie(nama, nilai, hari) {
       const d = new Date();
-      d.setTime(d.getTime() + (hari*24*60*60*1000));
+      d.setTime(d.getTime() + (hari * 24 * 60 * 60 * 1000));
       const expires = "expires=" + d.toUTCString();
       document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
     }
@@ -570,26 +574,56 @@
 
     function tampilkanPesan() {
       const nama = getCookie("namaPengguna");
+      const h1 = document.getElementById("welcomeMessage");
+      const notif = document.getElementById("notif");
+
       if (nama !== "") {
-        document.getElementById("welcomeMessage").textContent = "Selamat datang, " + nama + "!";
+        h1.textContent = `Selamat datang kembali, ${nama}! 🌟`;
+        h1.style.color = getWarnaDariNama(nama);
+        h1.classList.add("fade-in");
+        notif.textContent = "";
       }
     }
 
     function simpanNama() {
-      const nama = document.getElementById("nama").value;
+      const nama = document.getElementById("nama").value.trim();
+      const notif = document.getElementById("notif");
+
       if (nama !== "") {
         setCookie("namaPengguna", nama, 7);
         tampilkanPesan();
+        notif.textContent = `Nama "${nama}" disimpan ke cookie! ✅`;
+      } else {
+        notif.textContent = "Nama tidak boleh kosong 😅";
       }
     }
 
     function hapusCookie() {
       setCookie("namaPengguna", "", -1);
-      document.getElementById("welcomeMessage").textContent = "Selamat datang!";
+      const h1 = document.getElementById("welcomeMessage");
+      h1.textContent = "Cookie sudah dibersihkan. Halo, siapa kamu? 😊";
+      h1.style.color = "#333";
+      document.getElementById("notif").textContent = "Cookie dihapus 🗑️";
       document.getElementById("nama").value = "";
     }
 
+    function getWarnaDariNama(nama) {
+      // Bikin warna acak dari nama
+      let hash = 0;
+      for (let i = 0; i < nama.length; i++) {
+        hash = nama.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      let warna = '#';
+      for (let i = 0; i < 3; i++) {
+        let nilai = (hash >> (i * 8)) & 0xFF;
+        warna += ('00' + nilai.toString(16)).slice(-2);
+      }
+      return warna;
+    }
+
+    // Jalankan saat halaman dibuka
     tampilkanPesan();
   </script>
+
 </body>
 </html>
