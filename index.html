@@ -210,6 +210,18 @@
     </a>
   </div>
 </section>
+    
+<!-- Bagian Pencarian Buku -->
+<section id="search" class="search-section">
+  <div class="search-container">
+    <h2 class="search-title">🔍 Cari Buku di Perpustakaan</h2>
+    <p class="search-desc">Masukkan judul atau kata kunci untuk mencari koleksi buku yang tersedia.</p>
+    <form class="search-form" action="#" method="get" onsubmit="return false;">
+      <input type="text" class="search-input" placeholder="Cari judul, pengarang, atau topik...">
+      <button type="submit" class="search-btn">Cari</button>
+    </form>
+  </div>
+</section>
 
 <!-- REKOMENDASI BUKU -->
 <div class="rekomendasi fade-in" style="margin-top: 60px; background: #f9f9f9; padding: 40px 20px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); max-width: 1100px; margin-left: auto; margin-right: auto;">
@@ -489,6 +501,77 @@
             transform: scale(1);
         }
     }
+</style>
+    <style>
+    /* Bagian Search Buku */
+.search-section {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.search-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.search-title {
+  font-size: 28px;
+  color: #00BFFF;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.search-desc {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 12px 15px;
+  width: 60%;
+  max-width: 400px;
+  border: 2px solid #00BFFF;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-input:focus {
+  border-color: #009acd;
+}
+
+.search-btn {
+  background-color: #00BFFF;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 191, 255, 0.2);
+}
+
+.search-btn:hover {
+  background-color: #009acd;
+  transform: scale(1.05);
+}
 </style>
 
     <div class="section-title" style="margin-bottom: 20px;">
