@@ -539,5 +539,60 @@
     }
 </script>
 
+<script>
+  // Fungsi untuk menyimpan cookie
+  function setCookie(nama, nilai, hari) {
+    const d = new Date();
+    d.setTime(d.getTime() + (hari * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
+  }
+
+  // Fungsi untuk mengambil cookie
+  function getCookie(nama) {
+    const namaCookie = nama + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(namaCookie) === 0) {
+        return c.substring(namaCookie.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  // Fungsi untuk menampilkan pesan selamat datang
+  function tampilkanPesan() {
+    const nama = getCookie("namaPengguna");
+    if (nama !== "") {
+      document.getElementById("welcomeMessage").textContent = "Selamat datang, " + nama + "!";
+    }
+  }
+
+  // Fungsi untuk menyimpan nama ke cookie
+  function simpanNama() {
+    const nama = document.getElementById("nama").value;
+    if (nama !== "") {
+      setCookie("namaPengguna", nama, 7); // Simpan selama 7 hari
+      tampilkanPesan();
+    }
+  }
+
+  // Fungsi untuk menghapus cookie
+  function hapusCookie() {
+    setCookie("namaPengguna", "", -1); // Expire cookie
+    document.getElementById("welcomeMessage").textContent = "Selamat datang!";
+    document.getElementById("nama").value = "";
+  }
+
+  // Tampilkan pesan otomatis saat halaman dibuka
+  tampilkanPesan();
+</script>
+
+
 </body>
 </html>
