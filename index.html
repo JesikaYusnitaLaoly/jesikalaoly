@@ -216,15 +216,97 @@
 <body>
 
 <header class="header-library">
+    <style>
+        /* Style dasar */
+        .header-library {
+            background-color: #f8f8f8;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            display: block;
+        }
+
+        /* Dropdown Style */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 35px;
+            left: 0;
+            background-color: #fff;
+            padding: 0;
+            min-width: 150px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+            color: #444;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #eee;
+        }
+    </style>
+
     <div class="overlay"></div>
     <div class="header-content">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="80">
         <h1>Perpustakaan Jesika Yusnita Laoly</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Homepage</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li>
+                    <a href="index.html">Homepage</a>
+                    <ul>
+                        <li><a href="#news">Berita Terbaru</a></li>
+                        <li><a href="#events">Agenda</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="About.html">About</a>
+                    <ul>
+                        <li><a href="#profile">Profil Singkat</a></li>
+                        <li><a href="#team">Tim Kami</a></li>
+                        <li><a href="#vision">Visi & Misi</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                    <ul>
+                        <li><a href="#location">Lokasi</a></li>
+                        <li><a href="#email">Email</a></li>
+                        <li><a href="#social">Sosial Media</a></li>
+                    </ul>
+                </li>
                 <li><a href="tabel.html">Tabel</a></li>
                 <li><a href="http://localhost/tabel.php">PHP</a></li>
             </ul>
