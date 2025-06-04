@@ -5,38 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestasi dan Sertifikat</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-    }
-
-    .navbar {
-      background-color: #00BFFF;
-      padding: 15px;
-      text-align: center;
-    }
-
-    .navbar a {
+    /* HEADER */
+    .header-library {
+      position: relative;
+      background-image: url('https://res.cloudinary.com/dwa2jqgtp/image/upload/v1746550161/6643b453-6c9b-4225-8d84-1625eeee3e3e_qnx1pd.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 350px;
       color: white;
-      margin: 0 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .header-library .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+
+    .header-content img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .header-content h1 {
+      font-size: 28px;
+      color: white;
+      margin: 10px 0;
+    }
+
+    .header-content nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .header-content nav ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .header-content nav ul li a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease-in-out;
     }
 
-    .navbar a:hover {
-      text-decoration: underline;
+    .header-content nav ul li a:hover {
+      color: #FFD700;
     }
 
+    /* CONTAINER */
     .container {
-      padding: 30px;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      animation: fadeIn 1s ease-in;
     }
 
     h2 {
       color: #00BFFF;
       border-bottom: 2px solid #00BFFF;
       padding-bottom: 5px;
+      margin-top: 40px;
     }
 
     ul {
@@ -48,7 +92,9 @@
       background-color: #e6f7ff;
       border-left: 5px solid #00BFFF;
       padding: 15px;
-      margin: 10px 0;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
     a.link-button {
@@ -59,13 +105,21 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
 
     a.link-button:hover {
-      background-color: #009acd;
+      background-color: #008CBA;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+<body>
+
 <header class="header-library">
   <div class="overlay"></div>
   <div class="header-content">
@@ -77,42 +131,42 @@
         <li><a href="About.html">About</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="tabel.html">Tabel</a></li>
-         <li><a href="Prestasi.html">Prestasi</a></li>
+        <li><a href="Prestasi.html">Prestasi</a></li>
         <li><a href="http://localhost/tabel.php">PHP</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-  <div class="container">
-    <!-- CV Section -->
-    <section id="cv">
-      <h2>Curriculum Vitae (CV)</h2>
-      <div class="link-box">
-        <p>Klik tombol di bawah untuk melihat CV saya:</p>
-        <a class="link-button" href="https://drive.google.com/file/d/1RolgGWvVOkAZjkad-FUaoJQnoh1kXomo/view?usp=drivesdk" target="_blank">Lihat CV</a>
-      </div>
-    </section>
+<div class="container">
+  <!-- CV Section -->
+  <section id="cv">
+    <h2>Curriculum Vitae (CV)</h2>
+    <div class="link-box">
+      <p>Klik tombol di bawah untuk melihat CV saya:</p>
+      <a class="link-button" href="https://drive.google.com/file/d/1RolgGWvVOkAZjkad-FUaoJQnoh1kXomo/view?usp=drivesdk" target="_blank">Lihat CV</a>
+    </div>
+  </section>
 
-    <!-- Prestasi Section -->
-    <section id="prestasi">
-      <h2>Prestasi</h2>
-      <ul>
-        <li>Juara Harapan I – Lomba Baca Puisi Tingkat Kabupaten, 2016</li>
-        <li>Juara Harapan I – Cerdas Cermat TOPAN-RI, 2016</li>
-        <li>Finalis Provinsi – Lomba Penelitian Belia Sumatera Utara, 2015</li>
-      </ul>
-    </section>
+  <!-- Prestasi Section -->
+  <section id="prestasi">
+    <h2>Prestasi</h2>
+    <ul>
+      <li>Juara Harapan I – Lomba Baca Puisi Tingkat Kabupaten, 2016</li>
+      <li>Juara Harapan I – Cerdas Cermat TOPAN-RI, 2016</li>
+      <li>Finalis Provinsi – Lomba Penelitian Belia Sumatera Utara, 2015</li>
+    </ul>
+  </section>
 
-    <!-- Sertifikat Section -->
-    <section id="sertifikat">
-      <h2>Sertifikat</h2>
-      <div class="link-box">
-        <p>Saya memiliki beberapa sertifikat yang dapat dilihat melalui tautan Google Drive berikut:</p>
-        <a class="link-button" href="https://drive.google.com/drive/folders/1RxVFuapLdBOjzFUVsWLQgL3zHahA4D2I" target="_blank">Lihat Sertifikat</a>
-      </div>
-    </section>
-  </div>
+  <!-- Sertifikat Section -->
+  <section id="sertifikat">
+    <h2>Sertifikat</h2>
+    <div class="link-box">
+      <p>Saya memiliki beberapa sertifikat yang dapat dilihat melalui tautan Google Drive berikut:</p>
+      <a class="link-button" href="https://drive.google.com/drive/folders/1RxVFuapLdBOjzFUVsWLQgL3zHahA4D2I" target="_blank">Lihat Sertifikat</a>
+    </div>
+  </section>
+</div>
 
 </body>
 </html>
