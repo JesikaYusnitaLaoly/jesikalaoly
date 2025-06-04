@@ -216,174 +216,21 @@
 <body>
 
 <header class="header-library">
-    <style>
-        /* Style dasar */
-        .header-library {
-            background-color: #f8f8f8;
-            padding: 10px 20px;
-            position: relative;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            position: relative;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            padding: 8px 12px;
-            display: block;
-        }
-
-        /* Dropdown Style */
-        nav ul li ul {
-            display: none;
-            position: absolute;
-            top: 35px;
-            left: 0;
-            background-color: #fff;
-            padding: 0;
-            min-width: 150px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        nav ul li:hover ul {
-            display: block;
-        }
-
-        nav ul li ul li a {
-            padding: 10px;
-            color: #444;
-        }
-
-        nav ul li ul li a:hover {
-            background-color: #eee;
-        }
-    </style>
-
     <div class="overlay"></div>
     <div class="header-content">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="80">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website">
         <h1>Perpustakaan Jesika Yusnita Laoly</h1>
         <nav>
             <ul>
-                <li>
-                    <a href="index.html">Homepage</a>
-                    <ul>
-                        <li><a href="#news">Berita Terbaru</a></li>
-                        <li><a href="#events">Agenda</a></li>
-                        <li><a href="#services">Layanan</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="About.html">About</a>
-                    <ul>
-                        <li><a href="#profile">Profil Singkat</a></li>
-                        <li><a href="#team">Tim Kami</a></li>
-                        <li><a href="#vision">Visi & Misi</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                    <ul>
-                        <li><a href="#location">Lokasi</a></li>
-                        <li><a href="#email">Email</a></li>
-                        <li><a href="#social">Sosial Media</a></li>
-                    </ul>
-                </li>
+                <li><a href="index.html">Homepage</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="tabel.html">Tabel</a></li>
                 <li><a href="http://localhost/tabel.php">PHP</a></li>
             </ul>
         </nav>
     </div>
 </header>
-
-    <!-- Berita Terbaru -->
-<section id="news">
-    <h2>Berita Terbaru</h2>
-    <article>
-        <h3>Peluncuran Koleksi Digital Baru</h3>
-        <p>Perpustakaan Jesika Yusnita Laoly resmi meluncurkan koleksi digital terbaru berupa e-book dan jurnal ilmiah yang dapat diakses oleh seluruh civitas akademika.</p>
-    </article>
-    <article>
-        <h3>Workshop Literasi Informasi</h3>
-        <p>Telah dilaksanakan workshop bertema “Literasi Digital dan Pustaka Akademik” dengan peserta mahasiswa dan dosen dari berbagai fakultas.</p>
-    </article>
-</section>
-
-<!-- Agenda -->
-<section id="events">
-    <h2>Agenda</h2>
-    <ul>
-        <li><strong>10 Juni 2025</strong> - Pelatihan Mendeley & Zotero</li>
-        <li><strong>17 Juni 2025</strong> - Bedah Buku "Jejak Perpustakaan Nusantara"</li>
-        <li><strong>24 Juni 2025</strong> - Lomba Review Buku Mahasiswa</li>
-    </ul>
-</section>
-
-<!-- Layanan -->
-<section id="services">
-    <div class="section-title">
-        <h2>Layanan Perpustakaan</h2>
-    </div>
-    <div class="section-content">
-        <div class="service">
-            <h4>1. Layanan Sirkulasi</h4>
-            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1746439955/c58f4bb252ef51911da5c2c1a6bee0e2_naechm.jpg" alt="Peminjaman Buku">
-            <p style="text-align: justify;">
-                Layanan ini mencakup peminjaman, pengembalian, dan perpanjangan masa pinjam koleksi cetak seperti buku teks dan referensi. Mahasiswa dapat meminjam buku menggunakan kartu anggota perpustakaan dengan durasi pinjaman sesuai kebijakan (biasanya 1–2 minggu) dan dapat diperpanjang selama tidak sedang dipinjam pengguna lain.
-            </p>
-        </div>
-
-        <div class="service">
-            <h4>2. Layanan Referensi</h4>
-            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1746439952/ae416691ba1fbfff4c139f9f5eb707ed_zxz8n2.jpg" alt="Perpustakaan Digital">
-            <p style="text-align: justify;">
-                Layanan ini menyediakan bantuan dalam menemukan informasi akademik, termasuk ensiklopedia, kamus, jurnal ilmiah, dan karya ilmiah lainnya. Pustakawan siap membantu pencarian sumber referensi terpercaya, baik dalam bentuk cetak maupun digital. Akses ke database ilmiah juga tersedia secara daring.
-            </p>
-        </div>
-
-        <div class="service">
-            <h4>3. Layanan Ruang Baca</h4>
-            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1746439249/Huston_Company__Custom_scholar_carrels_and_reading_tables._University_library_iiw5na.jpg" alt="Ruangan Baca">
-            <p style="text-align: justify;">
-                Perpustakaan menyediakan ruang baca yang tenang, nyaman, dan dilengkapi dengan pencahayaan yang baik. Terdapat meja individu, sofa baca, dan ruang diskusi kelompok. Area ini ditujukan bagi pengguna yang ingin membaca di tempat atau mengerjakan tugas secara fokus.
-            </p>
-        </div>
-
-        <div class="service">
-            <h4>4. Layanan Akses Komputer dan Internet</h4>
-            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1746439606/bbed3389c818ba44e3211b3e35d2ab1e_k0btt2.jpg" alt="Penggunaan Komputer dan Internet">
-            <p style="text-align: justify;">
-                Layanan ini menyediakan komputer yang terhubung ke internet untuk keperluan akademik, seperti mengakses jurnal online, katalog perpustakaan (OPAC), e-book, serta portal e-learning kampus. Pengguna juga dapat mencetak tugas atau dokumen dengan layanan tambahan print dan scan.
-            </p>
-        </div>
-
-        <div class="service">
-            <h4>5. Layanan Bimbingan Pemustaka</h4>
-            <img src="https://res.cloudinary.com/dwa2jqgtp/image/upload/v1746440568/20eee38c77b94225d3871e2f2eb4762a_phc1kb.jpg" alt="Layanan Bimbingan">
-            <p style="text-align: justify;">
-                Perpustakaan memberikan layanan edukatif berupa bimbingan cara menelusur informasi, penggunaan katalog online (OPAC), serta pelatihan penggunaan database ilmiah. Layanan ini bertujuan meningkatkan literasi informasi dan kemandirian belajar mahasiswa.
-            </p>
-        </div>
-    </div>
-</section>
 
 <!-- Bagian Tentang Saya -->
 <section id="tentang" class="about animated-section">
