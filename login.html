@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Perpustakaan Jesika</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #00BFFF, #1E90FF);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #00BFFF;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .login-box input:focus {
+            border-color: #00BFFF;
+        }
+
+        .login-box button {
+            width: 100%;
+            background-color: #00BFFF;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-box button:hover {
+            background-color: #008CBA;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h2>Login Pengunjung</h2>
+        <form onsubmit="return validateLogin(event)">
+            <input type="text" id="username" placeholder="Nama Pengguna" required>
+            <input type="password" id="password" placeholder="Kata Sandi" required>
+            <button type="submit">Masuk</button>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // mencegah reload halaman
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Simulasi login (contoh: user: admin, password: 1234)
+            if (username === "admin" && password === "1234") {
+                alert("Login berhasil! Selamat datang " + username);
+                window.location.href = "index.html"; // diarahkan ke halaman utama
+            } else {
+                alert("Nama pengguna atau kata sandi salah.");
+            }
+        }
+    </script>
+
+</body>
+</html>
